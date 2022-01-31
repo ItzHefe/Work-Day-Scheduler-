@@ -13,3 +13,7 @@ var workDay = [
     { time: "4 PM", event: "" },
     { time: "5 PM", event: "" },
 ];
+
+/*puts live day in Jumbotron*/
+$("#currentDay").text(today);
+
