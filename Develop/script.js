@@ -14,6 +14,12 @@ var workDay = [
     { time: "5 PM", event: "" },
 ];
 
+// local storage check //
+var userEvents = JSON.parse(localStorage.getItem("Work-Day"));
+if (userEvents) {
+    workDay = userEvents;
+}
+
 // puts live day in Jumbotron //
 $("#currentDay").text(today);
 
@@ -44,3 +50,16 @@ function rowColored (time) {
         return "present";
     }
 }
+
+// Save Button to local storage //
+$(".saveBtn").on("click", function() {
+    var blockInput = parseInt(
+        $(this).closest(".time-block").attr("id")
+    );
+    var userInput = $.trim(
+        $(this).parent().siblings("textarea").val()
+    );
+    workDay[blockInput].event = userInput;
+
+    localStorage.setItem("Work-Day", JSON.stringify(workDay));
+});
