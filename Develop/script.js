@@ -1,6 +1,8 @@
 var today = moment().format("dddd, MMMM Do");
 var currentTime = moment().format("H A");
 
+currentTime = "14 PM"
+
 // hourly calendar entries //
 var workDay = [
     { time: "9 AM", event: "" },
@@ -29,7 +31,7 @@ workDay.forEach(function(timeBlock, index) {
     var blockColored = rowColored(timeLabel);
     var row =
     '<div class="time-block" id="' + 
-    index + '"><div class="row no-gutters input-group"><div class="col-sm col-lg-1 input-group-prepend hour justify-content-end pr-3 pt-3">' +
+    index + '"><div class="row no-gutters input-group"><div class="col-sm col-lg-1 input-group-prepend hour pr-3 pt-3">' +
     timeLabel + '</div><textarea class="form-control ' + 
     blockColored + '">' +
     timeBlock.event +
@@ -51,7 +53,7 @@ function rowColored (time) {
     }
 }
 
-// Save Button to local storage //
+
 $(".saveBtn").on("click", function() {
     var blockInput = parseInt(
         $(this).closest(".time-block").attr("id")
