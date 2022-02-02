@@ -1,6 +1,8 @@
 var today = moment().format("dddd, MMMM Do");
 var currentTime = moment().format("H A");
 
+// currentTime = "14 PM"
+
 // hourly calendar entries //
 var workDay = [
     { time: "9 AM", event: "" },
